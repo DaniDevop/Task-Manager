@@ -31,6 +31,7 @@ Route::get('registerUser/',[userController::class,'register'])->name('register_u
 Route::post('create_user_register/',[userController::class,'create_user_compte'])->name('creation.compte.register');
 Route::get('admin/view_register/',[userController::class,'view_register_members'])->name('view.register_members');
 Route::post('changes_role-user/',[userController::class,'change_role_user'])->name('change.role.user');
+Route::get('admin/create-account-user/',[userController::class,'admin_create_account_user'])->name('admin.create.account');
 
 Route::middleware(['auth.custom'])->group(function(){
     Route::get('/', function () {

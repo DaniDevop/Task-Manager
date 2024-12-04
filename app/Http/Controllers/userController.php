@@ -25,6 +25,11 @@ class userController extends Controller
         return view('admin.user.register',compact('userAll'));
     }
 
+    public function admin_create_account_user(){
+
+        return view('admin.user.user_create_compte');
+    }
+
     public function create_user_compte(UsersAccountRequest $request){
        
        
@@ -41,21 +46,24 @@ class userController extends Controller
             
             $user->user_role="USER";
         }
+        $user->user_role=$request->user_role;
         $user->save();
         toastr()->info("Comptes crée avec succes !");
-        return redirect()->route('auth.login');
+        return redirect()->back();
     }
 
     public function validateCompte_view($id){
         if(!Gate::allows('acces_data')){
             abort(403);
        }
-        $roles=role::all();
         $user=User::find($id);
         if(!$user){
-
+            toastr()->info("Utilisateur non trouvé");
+            return redirect()->back();
         }
-        return view('admin.user.validate_compte',compact('roles','user'));
+        $user->delete();
+        toastr()->warning("Attention comptes supprimé avec success !");
+        return redirect()->back();
     }
     public function validate_information_compte(Request $request){
         if(!Gate::allows('acces_data')){

@@ -77,6 +77,12 @@
                             <i class="bi bi-circle"></i><span>Attribution de role</span>
                         </a>
                     </li>
+
+                    <li>
+                        <a href="{{route('admin.create.account')}}">
+                            <i class="bi bi-circle"></i><span>Créer un compte </span>
+                        </a>
+                    </li>
                     @endif
                 </ul>
             </li>

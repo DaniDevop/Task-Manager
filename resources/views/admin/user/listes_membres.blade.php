@@ -80,7 +80,7 @@
                     <th >Email</th>
                     @if(Illuminate\Support\Facades\Auth::user()->user_role=='ADMIN')
                     <th >Details-taches</th>
-                    <th >Activation-compte</th>
+                    <th >Supprimer un compte</th>
                   
                     @endif
                     
@@ -95,7 +95,7 @@
                     <td>{{$user->email}}</td>
                     @if(Illuminate\Support\Facades\Auth::user()->user_role=='ADMIN')
                     <td><a  href="{{route('membres_details_taches',['id'=>$user->id])}}" class="btn btn-primary"><i class="bi bi-pencil"></i></a></td>
-                    <td><a  href="{{route('certificate.compte',['id'=>$user->id])}}" class="btn btn-primary"><i class="bi bi-pin-fill"></i></a></td>
+                    <td><a  href="{{route('certificate.compte',['id'=>$user->id])}}" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                     @endif
                   </tr>
                   @endforeach
