@@ -175,8 +175,10 @@ class tachesController extends Controller
 
     }
     public function users_taches_validate_view(){
-        $tachesAll=taches::where('statut','Finish')->where('confirmation','Confirmer')->get();
-        $tachesNumber=taches::where('statut','Finish')->where('confirmation','Confirmer')->count();
+        $tachesAll = Taches::where('statut', 'Finish')
+        ->where('confirmation', 'Confirmer')
+        ->with('user') // Charge la relation avec le modèle "User"
+        ->get();        $tachesNumber=taches::where('statut','Finish')->where('confirmation','Confirmer')->count();
         return view('admin.user.taches_users_validate',compact('tachesAll','tachesNumber'));
     }
     public function taches_finish_users($id){

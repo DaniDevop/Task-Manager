@@ -62,7 +62,6 @@
                   <th scope="col">Categorie</th>
                   <th scope="col">Date-echeances</th>
                   <th scope="col">Statut</th>
-                  <th scope="col">Date-de-fin</th>
                   <th scope="col">Confirmer</th>
                 </tr>
               </thead>
@@ -73,9 +72,8 @@
                     <td>{{$taches->taches_name}}</td>
                     <td>{{$taches->categorie->name}}</td>
                     <td>{{$taches->date_echeances}}</td>
-                    <td>{{$taches->User->name}}</td>
-                    <td>{{$taches->date_fin}}</td>
-                    <td><a class="btn btn-dark" href="{{route('valide_taches',['id'=>$taches->id])}}"><i class="bi bi-clipboard2-check-fill"></i></a></td>
+                    <td>{{$taches->user->nom}}</td>
+                      <td><a class="btn btn-dark" href="{{route('valide_taches',['id'=>$taches->id])}}"><i class="bi bi-clipboard2-check-fill"></i></a></td>
                   </tr>
                 @endforeach
               </tbody>

@@ -71,7 +71,7 @@
                     <td>{{$taches->taches_name}}</td>
                     <td>{{$taches->categorie->name}}</td>
                     <td>{{$taches->date_echeances}}</td>
-                    <td>{{$taches->User->name}}</td>
+                    <td>{{$taches->user->nom ?? ''}}</td>
                   </tr>
                 @endforeach
               </tbody>

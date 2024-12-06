@@ -41,6 +41,8 @@ Route::middleware(['auth.custom'])->group(function(){
         $numberTachesFinish=taches::where('statut','Finish')->where('confirmation','Confirmer')->count();
         $tachesConfirmationNumber=taches::where('statut','Finish')->where('confirmation','NON')->count();
         $tachesConfirmation=taches::where('statut','Finish')->where('confirmation','NON')->get();
+
+
         $tachesAll=taches::has('user');
         return view('index',compact('notification','tachesConfirmationNumber','tachesAll','tachesConfirmation','numberUsers','numberTachesInvalide','numberTachesFinish'));
     })->name('dashboard');
