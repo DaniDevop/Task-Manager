@@ -58,7 +58,7 @@
               <thead>
                 <tr>
                   <th scope="col">Numéro</th>
-                  <th scope="col">Taches-name</th>
+                  <th scope="col">Taches</th>
                   <th scope="col">Categorie</th>
                   <th scope="col">Date-echeances</th>
                   <th scope="col">Membres</th>
@@ -72,7 +72,7 @@
                     <td>{{$taches->taches_name}}</td>
                     <td>{{$taches->categorie->name}}</td>
                     <td>{{$taches->date_echeances}}</td>
-                    <td>{{$taches->user->name}}</td>
+                    <td>{{$taches->user->nom}}</td>
                     <td>
                       <a class="btn btn-primary" href="{{route('retire.taches.membres',['id'=>$taches->id])}}">
                         <i class="bi bi-pin-angle"></i>
